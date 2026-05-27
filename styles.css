@@ -1,0 +1,11 @@
+body {
+    background-image: linear-gradient(to bottom, white, rgb(240, 240, 240));
+}
+
+main {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+button {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

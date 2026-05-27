@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Back Around</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./script.js" defer></script>
+</head>
+<body class="d-flex flex-column min-vh-100 container">
+    <header class="align-items-left p-4">
+        <a onclick="setPage('home')">
+            <img src="./assets/coming-back-around-logo.png" style="cursor: pointer;">
+        </a>
+    </header>
+
+    <main class="d-flex flex-column flex-grow-1 align-items-center justify-content-center"><!-- border-->
+        
+        <div id="page-container" class="text-center"><!--border border-success-->
+        </div>
+        
+        <div name="buttons" class="d-flex gap-5 justify-content-center align-middle mt-3"><!--border border-primary-->
+            <button id="prev" onclick="prevPage()">Back</button>
+            <p id="page-number" style="margin:0px;"></p>
+            <button id="next" onclick="nextPage()">Next</button>
+        </div>
+    </main>
+
+    <footer class="d-flex justify-content-center align-items-center w-100 p-4">
+        <p>( Coming Back Around by <a href="https://jakedaspud.github.io/JakeDaSpud/" target="_blank">jake o'reilly</a> | 2026 )</p>
+    </footer>
+</body>
+</html>
