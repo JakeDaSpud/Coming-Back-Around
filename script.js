@@ -17,6 +17,26 @@ class Page
     }
 }
 
+// Text goes between elements
+const p_home =  '<p class="align-self-center">Coming Back Around is a story about a <span class="kid">Kid</span> and a <span class="nutcracker">Nutcracker</span>.</p>';
+
+const p_left = ['<p class="align-self-start">', '</p>'];
+const p_center = ['<p class="align-self-center">', '</p>'];
+const p_right = ['<p class="align-self-end">', '</p>'];
+
+const k_left = ['<p class="kid align-self-start"><img src="./assets/kid-headshot.png" style="height:1em; width:auto; object-fit:cover; vertical-align:middle;"> ', '</p>'];
+const k_center = ['<p class="kid align-self-center"><img src="./assets/kid-headshot.png" style="height:1em; width:auto; object-fit:cover; vertical-align:middle;"> ', '</p>'];
+const k_right = ['<p class="kid align-self-end"><img src="./assets/kid-headshot.png" style="height:1em; width:auto; object-fit:cover; vertical-align:middle;"> ', '</p>'];
+
+const n_left = ['<p class="nutcracker align-self-start">', ' <img src="./assets/nutcracker-headshot.png" style="height:1em; width:auto; object-fit:cover; vertical-align:middle;"></p>'];
+const n_center = ['<p class="nutcracker align-self-center">', ' <img src="./assets/nutcracker-headshot.png" style="height:1em; width:auto; object-fit:cover; vertical-align:middle;"></p>'];
+const n_right = ['<p class="nutcracker align-self-end">', ' <img src="./assets/nutcracker-headshot.png" style="height:1em; width:auto; object-fit:cover; vertical-align:middle;"></p>'];
+
+// Image location goes between elements
+const img_left = ['<img class="d-block align-self-start" src=', '>'];
+const img_center = ['<img class="d-block align-self-center" src=', '>'];
+const img_right = ['<img class="d-block align-self-end" src=', '>'];
+
 var Pages = new Map();
 addAllPages(Pages)
 
@@ -52,57 +72,67 @@ function addAllPages(PagesMap)
 
     PagesMap.set("home", new Page(
         "home", "Home",
-        "1", 10000, "nextlingertest",
+        "1", null, null,
         null, null, null,
-        '<img src="./assets/home-blurb.png" class="d-block align-self-center"><p class="align-self-center">Coming Back Around is a story about a Kid and a Nutcracker.</p>'));
+        '<img center "./assets/home-blurb.png">' +
+        '<p home></p>' +
+        '<k left>"Are you interested?"</k>' +
+        '<n right>I KNOW I AM</n>'));
+
 
     PagesMap.set("1", new Page(
         "1", "1",
         "2", null, null,
         "home", null, null,
-        '<img src="" class="d-block align-self-center">' +
-        '<p class="align-self-center">What do I do now?</p>'));
+        '<img center "./assets/home-blurb.png">' +
+        '<p center>"What do I do now?"</p>'));
+
 
     PagesMap.set("2", new Page(
-        "2", "2 - Align testing",
+        "2", "2",
         "3", null, null,
         "1", null, null,
-        '<p>length-length-length-length-length-length-length-length-length-length-length-length-length-length-length-length-length-length-length-length-length-length-length-length-length-length-length-length-length-length-length-length-length-length-length-length-length-length</p>' +
-        
-        '<img src="./assets/home-blurb.png" class="d-block align-self-start">' +
-        '<p class="align-self-start">this is the first piece of text on the left</p>' +
-        
-        '<img src="./assets/home-blurb.png" class="align-self-center">' +
-        '<p class="align-self-center">this is the second piece of text in the centre</p>' +
-        
-        '<img src="./assets/home-blurb.png" class="align-self-end">' +
-        '<p class="align-self-end">this is the third piece of text on the right</p>' +
+        '<img left "./assets/home-blurb.png">' +
+        '<p left>"They wanted me to do my work."</p>'+
+        '<p left>"I guess I\'ll do my work."</p>'));
 
-        '<img src="./assets/home-blurb.png" class="d-block align-self-start">' +
-        '<p class="align-self-start">this is the first piece of text on the left</p>' +
-        
-        '<img src="./assets/home-blurb.png" class="align-self-end">' +
-        '<p class="align-self-end">this is the third piece of text on the right</p>' 
-        
-    ));
+    // 2a
+
 
     PagesMap.set("3", new Page(
-        "3", "3 - Right Align Test",
-        null, null, null,
+        "3", "3",
+        "4", null, null,
         "2", null, null,
-        null));
+        '<img left "./assets/home-blurb.png">' +
+        '<p left>"This is easy."</p>'+
+        
+        '<img center "./assets/home-blurb.png">' +
+        '<p center>"I don\'t want to do this."</p>' +
+        
+        '<img right "./assets/home-blurb.png">'));
 
-    PagesMap.set("nextlingertest", new Page(
-        "nextlingertest", "next_test Title",
-        null, null, null,
-        "home", 5000, "evilhome",
-        '<p>waited 10 secs and went forward</p>'));
 
-    PagesMap.set("evilhome", new Page(
-        "evilhome", "EVILLLLLlll",
-        "normalp1", null, null,
+    PagesMap.set("4", new Page(
+        "4", "4",
+        "5", null, null,
+        "3", null, null,
+        '<img center "./assets/home-blurb.png">'));
+
+
+    PagesMap.set("5", new Page(
+        "5", "5",
+        "6", null, null,
+        "4", null, null,
+        '<img left "./assets/home-blurb.png">' +
+        '<img center "./assets/home-blurb.png">'));
+
+
+    PagesMap.set("6", new Page(
+        "6", "6",
         null, null, null,
-        '<p>EVILL HOMEE >:))))</p>'));
+        "5", null, null,
+        '<img center "./assets/home-blurb.png">' +
+        '<p center>What do I do now?</p>'));
 }
 
 
@@ -118,7 +148,7 @@ function setPage(page_id)
     if (current_page.story_content == null)
         pageContainer.innerHTML = '<h1>error, no current_page.story_content for id[' + current_page.id + ']</h1>';
     else
-        pageContainer.innerHTML = current_page.story_content;
+        pageContainer.innerHTML = generateBootstrap(current_page.story_content);
 
     // Set Buttons
     nextButton.disabled = current_page.next == null ? true : false;
@@ -126,6 +156,40 @@ function setPage(page_id)
     prevButton.disabled = current_page.prev == null ? true : false;
 
     page_loaded_timestamp = Date.now();
+}
+
+
+function generateBootstrap(story_content_string)
+{
+    // <p left>Lorem ipsum</p> = <p class="align-self-start">Lorem ipsum</p>
+    // <p center>Lorem ipsum</p> = <p class="align-self-center">Lorem ipsum</p>
+    // <p right>Lorem ipsum</p> = <p class="align-self-end">Lorem ipsum</p>
+    // <img left "./assets/home-blurb.png"> = <img src="./assets/home-blurb.png" class="d-block align-self-left">
+    // <img center "./assets/home-blurb.png"> = <img src="./assets/home-blurb.png" class="d-block align-self-center">
+    // <img right "./assets/home-blurb.png"> = <img src="./assets/home-blurb.png" class="d-block align-self-end">
+
+    let raw_html_out = story_content_string
+
+    // replace shorthand with regex
+    raw_html_out = raw_html_out.replace(/<p home>([\s\S]*?)<\/p>/g, p_home)
+
+    raw_html_out = raw_html_out.replace(/<p left>([\s\S]*?)<\/p>/g, p_left[0] + '$1' + p_left[1])
+    raw_html_out = raw_html_out.replace(/<p center>([\s\S]*?)<\/p>/g, p_center[0] + '$1' + p_center[1])
+    raw_html_out = raw_html_out.replace(/<p right>([\s\S]*?)<\/p>/g, p_right[0] + '$1' + p_right[1])
+
+    raw_html_out = raw_html_out.replace(/<k left>([\s\S]*?)<\/k>/g, k_left[0] + '$1' + k_left[1])
+    raw_html_out = raw_html_out.replace(/<k center>([\s\S]*?)<\/k>/g, k_center[0] + '$1' + k_center[1])
+    raw_html_out = raw_html_out.replace(/<k right>([\s\S]*?)<\/k>/g, k_right[0] + '$1' + k_right[1])
+
+    raw_html_out = raw_html_out.replace(/<n left>([\s\S]*?)<\/n>/g, n_left[0] + '$1' + n_left[1])
+    raw_html_out = raw_html_out.replace(/<n center>([\s\S]*?)<\/n>/g, n_center[0] + '$1' + n_center[1])
+    raw_html_out = raw_html_out.replace(/<n right>([\s\S]*?)<\/n>/g, n_right[0] + '$1' + n_right[1])
+
+    raw_html_out = raw_html_out.replace(/<img left "([^"]+)">/g, img_left[0] + '"$1"' + img_left[1])
+    raw_html_out = raw_html_out.replace(/<img center "([^"]+)">/g, img_center[0] + '"$1"' + img_center[1])
+    raw_html_out = raw_html_out.replace(/<img right "([^"]+)">/g, img_right[0] + '"$1"' + img_right[1])
+
+    return raw_html_out
 }
 
 

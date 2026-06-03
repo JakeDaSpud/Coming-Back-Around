@@ -3,9 +3,46 @@ body {
 }
 
 main {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: serif;
 }
 
 button {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: serif;
+}
+
+/* Finger Paint Regular */
+.fpr {
+  font-family: "Finger Paint", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.kid {
+    font-family: serif;
+    color: rgb(134, 128, 42);
+}
+
+.nutcracker {
+    font-family: "Finger Paint", sans-serif;
+    text-transform: uppercase;
+    color: green;
+}
+
+p {
+    word-break: break-word;
+}
+
+img {
+    size: 200%;
+}
+
+#page-container {
+    min-width: 40%;
+    max-width: 90%;
+}
+
+@media (min-width: 1350px){
+    #page-container {
+        max-width: 40%;
+    }
 }
